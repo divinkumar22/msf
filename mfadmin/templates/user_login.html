@@ -1,0 +1,66 @@
+{% extends "layouts/userbase.html" %}
+
+{% block title %} Login {% endblock %} 
+
+<!-- Element injected in the BODY element -->
+{% block body_class %} sidebar-mini pace-primary {% endblock body_class %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- pace-progress -->
+  <link rel="stylesheet" href="/static/assets/plugins/pace-progress/themes/black/pace-theme-flat-top.css">
+  <!-- adminlte-->
+  <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
+   <link rel="stylesheet" href="/static/assets/css/user.css">
+
+{% endblock stylesheets %}
+
+{% block content %}  
+
+  <div class="content-wrapper">
+    <div class=" justify-content-center">
+  <div class="form-group ml-5 col-6">
+    {% if msg %}
+          <small style="color: red;"><strong></strong>{{msg}}</small><br>
+    {% endif %}
+  <form method = 'post'>
+
+  {% csrf_token %}
+    <div class="mb-3">
+      <label class="col-form-label" for="inputSuccess"> Account Number: </label>
+      <input type="text" class="form-control col-md-6" id="inputSuccess" name="account_no" required placeholder="Account Number" reqiured>
+       <label class="col-form-label" for="inputSuccess"> password: </label>
+      <input type="password" class="form-control col-md-6" id="inputSuccess" name="password" required placeholder="Password" reqiured>
+    </div>
+
+     <button type="submit" class="btn btn-primary float-center">Login</button>
+</form>
+      </div>
+    </div>
+      <!-- /.card -->
+
+    <!-- /.content -->
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <!-- jQuery -->
+  <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- pace-progress -->
+  <script src="/static/assets/plugins/pace-progress/pace.min.js"></script>
+  <!-- AdminLTE app -->
+  <script src="/static/assets/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="/static/assets/js/demo.js"></script>
+
+{% endblock javascripts %}
