@@ -15,7 +15,7 @@
         </div>
         {% if user.is_authenticated %}
         <div class="info">
-          <a href="" class="d-block">
+          <a href="{% url 'logout' %}" class="d-block">
             {{ request.user.username }} - Logout
           </a>
         </div>
@@ -70,7 +70,7 @@
             
           </li>
           <li class="nav-item has-treeview {% if 'forms-' in segment %} menu-open {% endif %}">
-            <a href="/logout" class="nav-link {% if 'forms-' in segment %} active {% endif %}">
+            <a href="logout" class="nav-link {% if 'forms-' in segment %} active {% endif %}">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                Logout
