@@ -10,12 +10,12 @@ def UserLoginView(request):
         username = request.POST.get("account_no")
         password = request.POST.get("password")
         if request.user.is_authenticated:
-            return redirect("/adminuser/userHome")
+            return redirect("/")
         user = User.objects.filter(username=username).first()
         if user is not None and user.is_admin:
             if user.check_password(password):
                 login(request, user)
-                return redirect("/adminuser/userHome")
+                return redirect("/")
             else:
                 msg = "incorrect password"
         else:
